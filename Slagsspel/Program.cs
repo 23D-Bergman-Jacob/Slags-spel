@@ -2,18 +2,40 @@
 Random rnd = new Random();
 string sk1;
 string sk2;
+int sk2n = rnd.Next(1, 3);
 int sk1hp = rnd.Next(220, 290);
 int sk2hp = rnd.Next(230, 280);
 int sk1s;
 int sk2s;
+sk2 = "h";
+if (sk2n == 1)
+{
+    sk2 = "Anthony Yigit";
+}
+if (sk2n == 2)
+{
+    sk2 = "Muhammed Ali";
+}
+if (sk2n == 3)
+{
+    sk2 = "Floyd Mayweather";
+}
 int slag = 0;
+while (1==1)
+{
 System.Console.WriteLine("Vad heter slagskämpe 1?");
 sk1 = Console.ReadLine();
-System.Console.WriteLine("Vad heter slagskämpe 2?");
-sk2 = Console.ReadLine();
-// Console.Clear();
+if (sk1.Length<3){System.Console.WriteLine("namnet är för kort");}
+if (sk1.Length>10){System.Console.WriteLine("namnet är för långt");}
+if (sk1.Length<=10 && sk1.Length >=3){break;}
+
+}
+System.Console.WriteLine("Fighten börjar!!");
 while (1==1){
 Console.ReadLine();
+Console.Clear();
+System.Console.WriteLine(sk1+"                 "+sk2);
+correct();
 slag ++;
 sk1s = rnd.Next(20, 30);
 sk2s = rnd.Next(20, 30);
@@ -32,7 +54,11 @@ if (sk2hp>0){
 if (sk2hp<0&sk1hp<0){System.Console.WriteLine("Oavgjort!");}
 Console.ReadLine();
 //correct();
-//static void correct()
-// {
-// upprepande kåd
-// }
+static void correct()
+{
+
+System.Console.WriteLine("""
+
+ 
+""");
+}
