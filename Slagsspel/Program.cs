@@ -5,8 +5,8 @@ Random rnd = new Random();
 string sk1;
 string sk2;
 int sk2n = rnd.Next(1, 3);
-int sk1hp = rnd.Next(220, 290);
-int sk2hp = rnd.Next(230, 280);
+int sk1hp = rnd.Next(400, 500);
+int sk2hp = rnd.Next(400, 500);
 int sk1s;
 int sk2s;
 string atk = "0";
@@ -52,6 +52,7 @@ System.Console.WriteLine("Fighten börjar!!");
 }
 while (1==1){
 System.Console.WriteLine("Här får du välja hur din gubbe ska se ut. Du har 10 poäng och du kan sprida ut dom mellan attack \n  Hp och snabbhet du kan välja alla mellan 1 och 5 alla värden måste ha ett värde" );
+ System.Console.WriteLine(slag);
  System.Console.WriteLine("Din speed är?");
  spd = Console.ReadLine();
  System.Console.WriteLine("din attack är?");
@@ -81,25 +82,24 @@ System.Console.WriteLine("Här får du välja hur din gubbe ska se ut. Du har 10
  spdi=11;}
 if (spdi+atki+hpi<=10){break;}
 }
-sk1hp=+20*hpi;
-sk2hp=+hp2*20;
+sk1hp=sk1hp+20*hpi;
+sk2hp=sk2hp+hp2*20;
 while (1==1){
 Console.ReadLine();
 // correct();
 slag ++;
-sk1s = rnd.Next(10, 20)+atki;
-sk2s = rnd.Next(10, 20)+at2;
+sk1s = rnd.Next(10, 30)+atki*5;
+sk2s = rnd.Next(10, 30)+at2*5;
 spdix = rnd.Next(1,5)+spdi;
 sp2x = rnd.Next(1,5)+sp2;
 if (spdix >= sp2x){
-sk1hp =-sk2s;
+sk1hp =sk1hp-sk2s;
 if (sk1hp>0){
-sk2hp =- sk1s;}}
-sk2s =+2*at2;
+sk2hp =sk2hp - sk1s;}}
 if (spdix < sp2x){
-sk2hp =-sk1s;
+sk2hp =sk2hp-sk1s;
 if (sk2hp>0){
-sk1hp =- sk2s;}}
+sk1hp = sk1hp- sk2s;}}
 System.Console.WriteLine("Efter Attack "+ slag + " har "+ sk1 +" "+ sk1hp +" liv kvar och "+sk2+ " "+sk2hp + " kvar");
 if (sk1hp < 1){ break;};
 if (sk2hp < 1){ break;}
@@ -109,6 +109,7 @@ if (sk1hp>0&sk2hp<0){
 }
 if (sk2hp>0&sk1hp<0){
     System.Console.WriteLine("Grattis "+ sk2+"!!!!!");
+    System.Console.WriteLine("du förlorade");
 }
 if (sk2hp<0&sk1hp<0){System.Console.WriteLine("Oavgjort!");}
 Console.ReadLine();
