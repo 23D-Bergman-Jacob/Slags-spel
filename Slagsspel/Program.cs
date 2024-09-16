@@ -86,6 +86,7 @@ sk1hp=sk1hp+20*hpi;
 sk2hp=sk2hp+hp2*20;
 while (1==1){
 Console.ReadLine();
+    Console.Clear();
 // correct();
 slag ++;
 sk1s = rnd.Next(10, 30)+atki*5;
